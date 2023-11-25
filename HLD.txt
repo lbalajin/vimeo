@@ -1,0 +1,53 @@
+High-Level Design for Auto-Scaler Solution:
+------------------------
+Components:
+
+API Interaction Module:
+1) Handles communication with the external application's API.
+2) Uses the requests library to make HTTP requests for retrieving CPU utilization and updating the number of replicas.
+
+Auto-Scaling Logic:
+1) Contains the logic to calculate the necessary changes in replica count based on CPU utilization.
+2) Determines whether to increase, decrease, or maintain the number of replicas to achieve a target CPU utilization.
+
+Main Control Loop:
+1) Periodically fetches the current CPU utilization and number of replicas.
+2) Utilizes the auto-scaling logic to decide on adjustments to the replica count.
+3) Updates the number of replicas through API calls as required.
+
+------------------------------------------------------
+
+Workflow:
+
+Initialization:
+1) Initializes necessary variables, API endpoint URLs, and sets up the environment.
+2) Starts the main control loop for continuous monitoring and scaling.
+
+Monitoring and Scaling Loop:
+1) Fetches the CPU utilization and current replica count using API calls.
+2) Utilizes the auto-scaling logic to calculate the required change in replicas to maintain the target utilization (0.80).
+3) Makes API requests to adjust the number of replicas based on calculated changes.
+
+Error Handling:
+1) Incorporates error handling mechanisms for API failures, unexpected responses, or network issues.
+2) Logs errors and takes appropriate actions to ensure the script's stability.
+
+Logging and Reporting:
+1) Optionally includes logging mechanisms to record key events, errors, and scaling actions.
+2) Generates reports or logs for system administrators to track scaling activities and performance.
+
+Testing and Optimization:
+1) Includes testing suites to validate the auto-scaler's behavior in different scenarios and under varying loads.
+2) Optimizes the auto-scaling algorithm based on performance observations and feedback.
+
+-------------------------------------------------------
+
+Considerations:
+
+Scalability: Ensure the auto-scaler itself can handle scaling demands efficiently and doesn't become a bottleneck.
+
+Error Recovery: Implement mechanisms for recovery in case of failures, ensuring graceful degradation and system stability.
+
+Security: Handle authentication, authorization, and secure communication with the external application's APIs.
+
+Performance Impact: Monitor and optimize the frequency of checks and adjustments to minimize unnecessary API calls and system load.

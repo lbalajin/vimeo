@@ -1,0 +1,29 @@
+Below are some of the possible test cases for Auto-Scaler solution.
+
+A) Boundary Testing:
+    1) Lower Bound: Test when CPU utilization is extremely low (e.g., 0.10) and ensure the auto-scaler doesn't decrease replicas below a minimum threshold.
+    2) Upper Bound: Test when CPU utilization is very high (e.g., 0.95) and ensure the auto-scaler doesn't increase replicas excessively.
+
+B) Threshold Testing:
+    1) Vary CPU utilization around the target (e.g., 0.75, 0.80, 0.85) and validate that the auto-scaler adjusts replicas accordingly.
+
+C) Stability Testing:
+    1) Test the auto-scaler's behavior over a prolonged period, checking if it consistently adjusts replicas to maintain the desired CPU utilization average.
+
+D) Error Handling:
+    1)Simulate scenarios where API calls fail or return unexpected responses and ensure the auto-scaler handles these cases gracefully without crashing.
+
+E)Scaling Frequency:
+    1) Test the frequency of checks and adjustments by changing the sleep duration in the main loop. Ensure it doesn't overload the system with frequent updates or delay scaling adjustments too much.
+
+F) Load Testing:
+    1) Simulate sudden increases or decreases in load by emulating CPU spikes or drops and verify if the auto-scaler reacts appropriately.
+
+G) Edge Cases:
+    1) Test scenarios where the API returns extreme values or unexpected data formats and verify the auto-scaler's response.
+
+H) Concurrency Testing:
+    1) Simulate multiple instances of the auto-scaler running concurrently and check for any conflicts or unexpected behavior.
+
+I) Manual Testing with Real Data:
+    1) Test the auto-scaler in a staging environment or using real-world data to see how it behaves in a production-like setting.
