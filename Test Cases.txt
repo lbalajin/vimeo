@@ -1,0 +1,26 @@
+Below are some of the possible test cases for Auto-Scaler solution.
+
+A) Boundary Testing:
+    1) Lower Bound: Test when CPU utilization is extremely low (e.g., 0.10) and ensure the auto-scaler doesn't decrease replicas below a minimum threshold.
+    2) Upper Bound: Test when CPU utilization is very high (e.g., 0.95) and ensure the auto-scaler doesn't increase replicas excessively.
+
+B) Threshold Testing:
+    1) Vary CPU utilization around the target (e.g., 0.75, 0.80, 0.85) and verify if the auto-scaler adjusts replicas accordingly.
+    2) Validate that the script logs INFO messages for successful replica count adjustments.
+
+C) Stability Testing:
+    1) Test the auto-scaler's behavior over a prolonged period, checking if it consistently adjusts replicas to maintain the desired CPU utilization average.
+    2) Monitor the log file for stability, ensuring no critical errors are logged during prolonged operation.
+
+D) Error Handling and Logging Validation:
+    1) Simulate scenarios where API calls fail or return unexpected responses.
+    2) Verify that the script logs ERROR messages for encountered errors during API interactions.
+    3) Validate the content and format of log entries related to errors, successful events, and replica count changes.
+
+E) Logging Format and Observability:
+    1) Inspect the log file (autoscaler.log) for the recorded events, timestamps, and their respective logging levels (INFO and ERROR).
+    2) Ensure the log file provides clear visibility into the script's behavior, including successful actions and encountered errors.
+
+F) Load Testing and Log Analysis:
+    1) Simulate sudden increases or decreases in load, monitoring the log file for the auto-scaler's response during these load changes.
+    2) Analyze the log file to assess the auto-scaler's behavior, system stability, and how it handles load fluctuations.
