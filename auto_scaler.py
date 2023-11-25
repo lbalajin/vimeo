@@ -34,7 +34,12 @@ current_time = datetime.now()
 print(f"Script executed at: {current_time}")
 
 # Configure logging
-logging.basicConfig(filename='autoscaler.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(
+   filename='autoscaler.log',
+   level=logging.DEBUG,
+   format='%(asctime)s - %(levelname)s - %(message)s',
+   datefmt='%Y-%m-%d %H:%M:%S'
+   )
 
 # Placeholder URLs for the application's API endpoints
 status_endpoint = "http://auto_scaler_example.com/app/status" 
