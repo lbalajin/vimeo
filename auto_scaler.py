@@ -38,7 +38,7 @@ logging.basicConfig(filename='autoscaler.log', level=logging.INFO, format='%(asc
 
 # Placeholder URLs for the application's API endpoints
 status_endpoint = "http://auto_scaler_example.com/app/status" 
-replicas_endpoint = "http://auto_scaler_example.com/app/status"
+replicas_endpoint = "http://auto_scaler_example.com/app/replicas"
 
 def get_status():
     try:
