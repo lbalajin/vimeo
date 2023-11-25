@@ -11,7 +11,7 @@
 
 3. **Logging and Observability:**
    - Integrates the `logging` module to record events, errors, and replica count changes in a log file (`autoscaler.log`).
-   - Logs events at the INFO level for successful actions and at the ERROR level for encountered errors during API calls.
+   - Logs events at the INFO/DEBUG level for successful actions and at the ERROR level for encountered errors during API calls.
 
 4. **Main Control Loop:**
    - Periodically fetches the current CPU utilization and number of replicas.
